@@ -1,0 +1,26 @@
+{
+  "MetaData": {
+    "TenantDisplayName": "Example Agency (Demo)",
+    "TenantId": "[GUID_A07B3A6F]",
+    "ScanRunBy": "[EMAIL_145456BE]",
+    "ScanHostIp": "[IPV4_090874DB]",
+    "Note": "Illustrative excerpt in a simplified format, not ScubaGear's full output schema."
+  },
+  "Results": [
+    { "PolicyId": "MS.AAD.3.2v1", "Product": "AAD", "Result": "Fail", "Criticality": "Shall",
+      "Details": "0 conditional access policies enforce MFA for all users. Last policy change by [EMAIL_4A47FD33]" },
+    { "PolicyId": "MS.AAD.1.1v1", "Product": "AAD", "Result": "Fail", "Criticality": "Shall",
+      "Details": "Legacy authentication not blocked. 14 sign-ins via IMAP from [IPV4_96FABCAD] in the last 30 days" },
+    { "PolicyId": "MS.SHAREPOINT.1.1v1", "Product": "SharePoint", "Result": "Fail", "Criticality": "Shall",
+      "Details": "SharingCapability is ExternalUserAndGuestSharing. Site owner contact: [PHONE_635C6EE2]" },
+    { "PolicyId": "MS.AAD.2.1v1", "Product": "AAD", "Result": "Pass", "Criticality": "Shall",
+      "Details": "Users detected as high risk are blocked." },
+    { "PolicyId": "MS.EXO.1.1v1", "Product": "EXO", "Result": "Pass", "Criticality": "Shall",
+      "Details": "Automatic forwarding to external domains is disabled." },
+    { "PolicyId": "MS.DEFENDER.1.1v1", "Product": "Defender", "Result": "Pass", "Criticality": "Shall",
+      "Details": "Standard and strict preset security policies are enabled." },
+    { "PolicyId": "MS.TEAMS.1.1v1", "Product": "Teams", "Result": "Warning", "Criticality": "Should",
+      "Details": "External participants can request control of shared desktops. Reported by [EMAIL_FA928A56]" }
+  ]
+}
+

@@ -1,0 +1,773 @@
+{
+  "assessment-results": {
+    "uuid": "a5201ff1-9b97-41c6-9c5c-2e394bc1bf3c",
+    "metadata": {
+      "title": "ScubaLens AI - SCuBA Assessment Results",
+      "last-modified": "2026-09-25T23:30:40.348Z",
+      "version": "1.0",
+      "oscal-version": "1.1.2"
+    },
+    "import-ap": {
+      "href": "#scubalens-assessment-plan"
+    },
+    "results": [
+      {
+        "uuid": "db0a9271-b414-42d7-a023-03e6a446d721",
+        "title": "ScubaGear scan - CISA published sample tenant",
+        "description": "Failed SCuBA controls with linked remediation scripts. Personal data masked before analysis.",
+        "start": "2026-09-25T23:30:40.348Z",
+        "reviewed-controls": {
+          "control-selections": [
+            {
+              "include-controls": [
+                {
+                  "control-id": "ia-2.1"
+                },
+                {
+                  "control-id": "ia-2.2"
+                },
+                {
+                  "control-id": "ac-6.5"
+                },
+                {
+                  "control-id": "ac-6"
+                },
+                {
+                  "control-id": "cm-11"
+                },
+                {
+                  "control-id": "ms.aad.3.4v1"
+                },
+                {
+                  "control-id": "ms.aad.7.2v1"
+                },
+                {
+                  "control-id": "ms.aad.7.4v1"
+                },
+                {
+                  "control-id": "ms.aad.7.5v1"
+                },
+                {
+                  "control-id": "ms.aad.7.6v1"
+                },
+                {
+                  "control-id": "ms.aad.7.7v1"
+                },
+                {
+                  "control-id": "ms.defender.1.4v1"
+                },
+                {
+                  "control-id": "ms.defender.1.5v1"
+                },
+                {
+                  "control-id": "ms.powerplatform.2.1v1"
+                },
+                {
+                  "control-id": "ia-5.1"
+                }
+              ]
+            }
+          ]
+        },
+        "observations": [
+          {
+            "uuid": "5b5897e9-2b3f-45dc-9b68-f84e997e52d5",
+            "title": "MS.AAD.3.1v1 - Phishing-resistant MFA not enforced for all users",
+            "description": "ScubaGear reported FAIL for MS.AAD.3.1v1 (Entra ID): 0 conditional access policy(s) found that meet(s) all requirements.",
+            "methods": [
+              "TEST"
+            ],
+            "types": [
+              "finding"
+            ],
+            "collected": "2026-09-25T23:30:40.348Z"
+          },
+          {
+            "uuid": "a18031a8-0da6-4234-af70-e93b0b1e130d",
+            "title": "MS.AAD.3.6v1 - Phishing-resistant MFA not required for privileged roles",
+            "description": "ScubaGear reported FAIL for MS.AAD.3.6v1 (Entra ID): 0 conditional access policy(s) found that meet(s) all requirements.",
+            "methods": [
+              "TEST"
+            ],
+            "types": [
+              "finding"
+            ],
+            "collected": "2026-09-25T23:30:40.348Z"
+          },
+          {
+            "uuid": "5ce53e0c-d128-4077-959e-23c17835916d",
+            "title": "MS.AAD.5.1v1 - Non-admins can register applications",
+            "description": "ScubaGear reported FAIL for MS.AAD.5.1v1 (Entra ID): 1 authorization policies found that allow non-admin users to register third-party applications: authorizationPolicy",
+            "methods": [
+              "TEST"
+            ],
+            "types": [
+              "finding"
+            ],
+            "collected": "2026-09-25T23:30:40.348Z"
+          },
+          {
+            "uuid": "9aaceb5c-6ddd-4946-bbc7-5ca09087db71",
+            "title": "MS.AAD.5.2v1 - Users can consent to third-party apps",
+            "description": "ScubaGear reported FAIL for MS.AAD.5.2v1 (Entra ID): 1 authorization policies found that allow non-admin users to consent to third-party applications with risky delegated permission classifications: authorizationPolicy",
+            "methods": [
+              "TEST"
+            ],
+            "types": [
+              "finding"
+            ],
+            "collected": "2026-09-25T23:30:40.348Z"
+          },
+          {
+            "uuid": "1c963581-687d-4586-ab30-a43d494d0e57",
+            "title": "MS.AAD.3.4v1 - The Authentication Methods Manage Migration feature SHALL be set to Migration Complete",
+            "description": "ScubaGear reported FAIL for MS.AAD.3.4v1 (Entra ID): Requirement not met",
+            "methods": [
+              "TEST"
+            ],
+            "types": [
+              "finding"
+            ],
+            "collected": "2026-09-25T23:30:40.348Z"
+          },
+          {
+            "uuid": "ce66b7f5-451b-4dc3-bf87-56ef55c3cefe",
+            "title": "MS.AAD.7.2v1 - Privileged users SHALL be provisioned with finer-grained roles instead of Global Administrator",
+            "description": "ScubaGear reported FAIL for MS.AAD.7.2v1 (Entra ID): Requirement not met: Least Privilege Score = 2 (should be 1 or less) Calculated by 2 global admins / 1 privileged users without global admin role",
+            "methods": [
+              "TEST"
+            ],
+            "types": [
+              "finding"
+            ],
+            "collected": "2026-09-25T23:30:40.348Z"
+          },
+          {
+            "uuid": "1ebc400b-eb99-42f6-a4a9-d6feff38f73a",
+            "title": "MS.AAD.7.4v1 - Permanent active role assignments SHALL NOT be allowed for highly privileged roles",
+            "description": "ScubaGear reported FAIL for MS.AAD.7.4v1 (Entra ID): 6 role(s) that contain users with permanent active assignment: Application Administrator, Cloud Application Administrator, Exchange Administrator, Global Administrator, SharePoint Administrator, User Administrator",
+            "methods": [
+              "TEST"
+            ],
+            "types": [
+              "finding"
+            ],
+            "collected": "2026-09-25T23:30:40.348Z"
+          },
+          {
+            "uuid": "35b58518-912c-475f-b7b7-0d473f89fed7",
+            "title": "MS.AAD.7.5v1 - Provisioning users to highly privileged roles SHALL NOT occur outside of a PAM system",
+            "description": "ScubaGear reported FAIL for MS.AAD.7.5v1 (Entra ID): 3 role(s) assigned to users outside of PIM: Global Administrator, SharePoint Administrator, User Administrator",
+            "methods": [
+              "TEST"
+            ],
+            "types": [
+              "finding"
+            ],
+            "collected": "2026-09-25T23:30:40.348Z"
+          },
+          {
+            "uuid": "f65c700f-2d61-4f77-a5d2-0c1e849db748",
+            "title": "MS.AAD.7.6v1 - Activation of the Global Administrator role SHALL require approval",
+            "description": "ScubaGear reported FAIL for MS.AAD.7.6v1 (Entra ID): 1 role(s) or group(s) allowing activation without approval found: Global Administrator(Directory Role)",
+            "methods": [
+              "TEST"
+            ],
+            "types": [
+              "finding"
+            ],
+            "collected": "2026-09-25T23:30:40.348Z"
+          },
+          {
+            "uuid": "6b2d52d4-4b04-4572-ba6e-35bee30656f0",
+            "title": "MS.AAD.7.7v1 - Eligible and active highly privileged role assignments SHALL trigger an alert",
+            "description": "ScubaGear reported FAIL for MS.AAD.7.7v1 (Entra ID): 6 role(s) or group(s) without notification e-mail configured for role assignments found: Cloud Application Administrator(Directory Role), Exchange Administrator(Directory Role), Global Administrator(Directory Role), Hybrid Identity Administrator(Directory Role), Privileged Role Administrator(Directory Role), SharePoint Administrator(Directory Role)",
+            "methods": [
+              "TEST"
+            ],
+            "types": [
+              "finding"
+            ],
+            "collected": "2026-09-25T23:30:40.348Z"
+          },
+          {
+            "uuid": "c5c46788-d6e0-43e0-8797-21062e1ce7ec",
+            "title": "MS.DEFENDER.1.4v1 - Sensitive accounts SHALL be added to Exchange Online Protection in the strict preset security policy",
+            "description": "ScubaGear reported FAIL for MS.DEFENDER.1.4v1 (Defender for Office 365): Requirement not met",
+            "methods": [
+              "TEST"
+            ],
+            "types": [
+              "finding"
+            ],
+            "collected": "2026-09-25T23:30:40.348Z"
+          },
+          {
+            "uuid": "eb69e47c-819d-4ca4-8d5d-31d49d1c0261",
+            "title": "MS.DEFENDER.1.5v1 - Sensitive accounts SHALL be added to Defender for Office 365 protection in the strict preset security policy",
+            "description": "ScubaGear reported FAIL for MS.DEFENDER.1.5v1 (Defender for Office 365): Requirement not met",
+            "methods": [
+              "TEST"
+            ],
+            "types": [
+              "finding"
+            ],
+            "collected": "2026-09-25T23:30:40.348Z"
+          },
+          {
+            "uuid": "30930a3e-2bf2-45fb-8610-ce5dd1640a1c",
+            "title": "MS.POWERPLATFORM.2.1v1 - A DLP policy SHALL be created to restrict connector access in the default Power Platform environment",
+            "description": "ScubaGear reported FAIL for MS.POWERPLATFORM.2.1v1 (Power Platform): No policy found that applies to default environment",
+            "methods": [
+              "TEST"
+            ],
+            "types": [
+              "finding"
+            ],
+            "collected": "2026-09-25T23:30:40.348Z"
+          },
+          {
+            "uuid": "8e123e30-5bd8-42a4-9a91-a2bdbbeb1e67",
+            "title": "MS.AAD.6.1v1 - User passwords expire",
+            "description": "ScubaGear reported FAIL for MS.AAD.6.1v1 (Entra ID): Requirement not met",
+            "methods": [
+              "TEST"
+            ],
+            "types": [
+              "finding"
+            ],
+            "collected": "2026-09-25T23:30:40.348Z"
+          }
+        ],
+        "findings": [
+          {
+            "uuid": "f48f3893-56bf-4b7e-9b67-e036b9c30eec",
+            "title": "Phishing-resistant MFA not enforced for all users",
+            "description": "Creates a Conditional Access policy requiring the built-in \"Phishing-resistant MFA\" authentication strength for all users, excluding break-glass accounts.",
+            "target": {
+              "type": "objective-id",
+              "target-id": "ia-2.1",
+              "status": {
+                "state": "not-satisfied"
+              }
+            },
+            "props": [
+              {
+                "name": "scuba-policy-id",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "MS.AAD.3.1v1"
+              },
+              {
+                "name": "bod-25-01-requirement",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "yes"
+              },
+              {
+                "name": "remediation-script",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Fix_PhishResistantMFA_AllUsers.ps1"
+              },
+              {
+                "name": "remediation-status",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Generated"
+              },
+              {
+                "name": "nist-800-53-mapping",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "ia-2.1,ia-2.2 (AI-suggested, analyst review required)"
+              }
+            ],
+            "related-observations": [
+              {
+                "observation-uuid": "5b5897e9-2b3f-45dc-9b68-f84e997e52d5"
+              }
+            ]
+          },
+          {
+            "uuid": "b0fbf2a0-8789-465f-9890-ca75804aecbe",
+            "title": "Phishing-resistant MFA not required for privileged roles",
+            "description": "Creates a Conditional Access policy requiring phishing-resistant MFA for highly privileged directory roles, excluding break-glass accounts.",
+            "target": {
+              "type": "objective-id",
+              "target-id": "ia-2.1",
+              "status": {
+                "state": "not-satisfied"
+              }
+            },
+            "props": [
+              {
+                "name": "scuba-policy-id",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "MS.AAD.3.6v1"
+              },
+              {
+                "name": "bod-25-01-requirement",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "yes"
+              },
+              {
+                "name": "remediation-script",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Fix_PhishResistantMFA_PrivilegedRoles.ps1"
+              },
+              {
+                "name": "remediation-status",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Generated"
+              },
+              {
+                "name": "nist-800-53-mapping",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "ia-2.1,ac-6.5 (AI-suggested, analyst review required)"
+              }
+            ],
+            "related-observations": [
+              {
+                "observation-uuid": "a18031a8-0da6-4234-af70-e93b0b1e130d"
+              }
+            ]
+          },
+          {
+            "uuid": "c6503c13-5e37-4c0f-a0d1-0adf4c8c35ae",
+            "title": "Non-admins can register applications",
+            "description": "Turns off app registration for non-admin users, after saving the current setting for rollback.",
+            "target": {
+              "type": "objective-id",
+              "target-id": "ac-6",
+              "status": {
+                "state": "not-satisfied"
+              }
+            },
+            "props": [
+              {
+                "name": "scuba-policy-id",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "MS.AAD.5.1v1"
+              },
+              {
+                "name": "bod-25-01-requirement",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "yes"
+              },
+              {
+                "name": "remediation-script",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Fix_RestrictAppRegistration.ps1"
+              },
+              {
+                "name": "remediation-status",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Generated"
+              },
+              {
+                "name": "nist-800-53-mapping",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "ac-6,cm-11 (AI-suggested, analyst review required)"
+              }
+            ],
+            "related-observations": [
+              {
+                "observation-uuid": "5ce53e0c-d128-4077-959e-23c17835916d"
+              }
+            ]
+          },
+          {
+            "uuid": "cda5f9d2-da5f-4c40-9ea2-0c971af57a10",
+            "title": "Users can consent to third-party apps",
+            "description": "Removes user consent policies so an administrator must approve app access, after saving the current setting for rollback.",
+            "target": {
+              "type": "objective-id",
+              "target-id": "ac-6",
+              "status": {
+                "state": "not-satisfied"
+              }
+            },
+            "props": [
+              {
+                "name": "scuba-policy-id",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "MS.AAD.5.2v1"
+              },
+              {
+                "name": "bod-25-01-requirement",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "yes"
+              },
+              {
+                "name": "remediation-script",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Fix_RestrictUserConsent.ps1"
+              },
+              {
+                "name": "remediation-status",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Generated"
+              },
+              {
+                "name": "nist-800-53-mapping",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "ac-6,cm-11 (AI-suggested, analyst review required)"
+              }
+            ],
+            "related-observations": [
+              {
+                "observation-uuid": "9aaceb5c-6ddd-4946-bbc7-5ca09087db71"
+              }
+            ]
+          },
+          {
+            "uuid": "cdb92f0a-02be-4818-bd60-0c84892375eb",
+            "title": "The Authentication Methods Manage Migration feature SHALL be set to Migration Complete",
+            "description": "The Authentication Methods Manage Migration feature SHALL be set to Migration Complete.",
+            "target": {
+              "type": "objective-id",
+              "target-id": "ms.aad.3.4v1",
+              "status": {
+                "state": "not-satisfied"
+              }
+            },
+            "props": [
+              {
+                "name": "scuba-policy-id",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "MS.AAD.3.4v1"
+              },
+              {
+                "name": "bod-25-01-requirement",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "yes"
+              },
+              {
+                "name": "remediation-status",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Routed to engineer (no approved template)"
+              }
+            ],
+            "related-observations": [
+              {
+                "observation-uuid": "1c963581-687d-4586-ab30-a43d494d0e57"
+              }
+            ]
+          },
+          {
+            "uuid": "f9eb2793-dab0-4e0c-8cc9-8b9e5ab6b9ca",
+            "title": "Privileged users SHALL be provisioned with finer-grained roles instead of Global Administrator",
+            "description": "Privileged users SHALL be provisioned with finer-grained roles instead of Global Administrator.",
+            "target": {
+              "type": "objective-id",
+              "target-id": "ms.aad.7.2v1",
+              "status": {
+                "state": "not-satisfied"
+              }
+            },
+            "props": [
+              {
+                "name": "scuba-policy-id",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "MS.AAD.7.2v1"
+              },
+              {
+                "name": "bod-25-01-requirement",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "yes"
+              },
+              {
+                "name": "remediation-status",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Routed to engineer (no approved template)"
+              }
+            ],
+            "related-observations": [
+              {
+                "observation-uuid": "ce66b7f5-451b-4dc3-bf87-56ef55c3cefe"
+              }
+            ]
+          },
+          {
+            "uuid": "a733ab5f-5a1d-41c4-815a-3cef29918f86",
+            "title": "Permanent active role assignments SHALL NOT be allowed for highly privileged roles",
+            "description": "Permanent active role assignments SHALL NOT be allowed for highly privileged roles.",
+            "target": {
+              "type": "objective-id",
+              "target-id": "ms.aad.7.4v1",
+              "status": {
+                "state": "not-satisfied"
+              }
+            },
+            "props": [
+              {
+                "name": "scuba-policy-id",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "MS.AAD.7.4v1"
+              },
+              {
+                "name": "bod-25-01-requirement",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "yes"
+              },
+              {
+                "name": "remediation-status",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Routed to engineer (no approved template)"
+              }
+            ],
+            "related-observations": [
+              {
+                "observation-uuid": "1ebc400b-eb99-42f6-a4a9-d6feff38f73a"
+              }
+            ]
+          },
+          {
+            "uuid": "c48ae5da-29e6-4424-b1b1-28d3583e6710",
+            "title": "Provisioning users to highly privileged roles SHALL NOT occur outside of a PAM system",
+            "description": "Provisioning users to highly privileged roles SHALL NOT occur outside of a PAM system.",
+            "target": {
+              "type": "objective-id",
+              "target-id": "ms.aad.7.5v1",
+              "status": {
+                "state": "not-satisfied"
+              }
+            },
+            "props": [
+              {
+                "name": "scuba-policy-id",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "MS.AAD.7.5v1"
+              },
+              {
+                "name": "bod-25-01-requirement",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "yes"
+              },
+              {
+                "name": "remediation-status",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Routed to engineer (no approved template)"
+              }
+            ],
+            "related-observations": [
+              {
+                "observation-uuid": "35b58518-912c-475f-b7b7-0d473f89fed7"
+              }
+            ]
+          },
+          {
+            "uuid": "47dc145d-1cbb-415a-8cff-f6c6cc754ec4",
+            "title": "Activation of the Global Administrator role SHALL require approval",
+            "description": "Activation of the Global Administrator role SHALL require approval.",
+            "target": {
+              "type": "objective-id",
+              "target-id": "ms.aad.7.6v1",
+              "status": {
+                "state": "not-satisfied"
+              }
+            },
+            "props": [
+              {
+                "name": "scuba-policy-id",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "MS.AAD.7.6v1"
+              },
+              {
+                "name": "bod-25-01-requirement",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "yes"
+              },
+              {
+                "name": "remediation-status",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Routed to engineer (no approved template)"
+              }
+            ],
+            "related-observations": [
+              {
+                "observation-uuid": "f65c700f-2d61-4f77-a5d2-0c1e849db748"
+              }
+            ]
+          },
+          {
+            "uuid": "162dfb27-19f1-490d-a3d2-2d104f70934a",
+            "title": "Eligible and active highly privileged role assignments SHALL trigger an alert",
+            "description": "Eligible and active highly privileged role assignments SHALL trigger an alert.",
+            "target": {
+              "type": "objective-id",
+              "target-id": "ms.aad.7.7v1",
+              "status": {
+                "state": "not-satisfied"
+              }
+            },
+            "props": [
+              {
+                "name": "scuba-policy-id",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "MS.AAD.7.7v1"
+              },
+              {
+                "name": "bod-25-01-requirement",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "yes"
+              },
+              {
+                "name": "remediation-status",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Routed to engineer (no approved template)"
+              }
+            ],
+            "related-observations": [
+              {
+                "observation-uuid": "6b2d52d4-4b04-4572-ba6e-35bee30656f0"
+              }
+            ]
+          },
+          {
+            "uuid": "fc98d6c8-5742-41db-aad9-d289ca26a794",
+            "title": "Sensitive accounts SHALL be added to Exchange Online Protection in the strict preset security policy",
+            "description": "Sensitive accounts SHALL be added to Exchange Online Protection in the strict preset security policy.",
+            "target": {
+              "type": "objective-id",
+              "target-id": "ms.defender.1.4v1",
+              "status": {
+                "state": "not-satisfied"
+              }
+            },
+            "props": [
+              {
+                "name": "scuba-policy-id",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "MS.DEFENDER.1.4v1"
+              },
+              {
+                "name": "bod-25-01-requirement",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "yes"
+              },
+              {
+                "name": "remediation-status",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Routed to engineer (no approved template)"
+              }
+            ],
+            "related-observations": [
+              {
+                "observation-uuid": "c5c46788-d6e0-43e0-8797-21062e1ce7ec"
+              }
+            ]
+          },
+          {
+            "uuid": "4482bf71-2730-4448-8d93-f7c045ce85ba",
+            "title": "Sensitive accounts SHALL be added to Defender for Office 365 protection in the strict preset security policy",
+            "description": "Sensitive accounts SHALL be added to Defender for Office 365 protection in the strict preset security policy.",
+            "target": {
+              "type": "objective-id",
+              "target-id": "ms.defender.1.5v1",
+              "status": {
+                "state": "not-satisfied"
+              }
+            },
+            "props": [
+              {
+                "name": "scuba-policy-id",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "MS.DEFENDER.1.5v1"
+              },
+              {
+                "name": "bod-25-01-requirement",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "yes"
+              },
+              {
+                "name": "remediation-status",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Routed to engineer (no approved template)"
+              }
+            ],
+            "related-observations": [
+              {
+                "observation-uuid": "eb69e47c-819d-4ca4-8d5d-31d49d1c0261"
+              }
+            ]
+          },
+          {
+            "uuid": "553f66f6-7913-4b5b-8c63-918a1a1258a2",
+            "title": "A DLP policy SHALL be created to restrict connector access in the default Power Platform environment",
+            "description": "A DLP policy SHALL be created to restrict connector access in the default Power Platform environment.",
+            "target": {
+              "type": "objective-id",
+              "target-id": "ms.powerplatform.2.1v1",
+              "status": {
+                "state": "not-satisfied"
+              }
+            },
+            "props": [
+              {
+                "name": "scuba-policy-id",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "MS.POWERPLATFORM.2.1v1"
+              },
+              {
+                "name": "bod-25-01-requirement",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "yes"
+              },
+              {
+                "name": "remediation-status",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Routed to engineer (no approved template)"
+              }
+            ],
+            "related-observations": [
+              {
+                "observation-uuid": "30930a3e-2bf2-45fb-8610-ce5dd1640a1c"
+              }
+            ]
+          },
+          {
+            "uuid": "6301425b-ef19-426a-928a-2166008cd5cf",
+            "title": "User passwords expire",
+            "description": "Sets verified domains so passwords do not expire, after saving each domain's current setting for rollback.",
+            "target": {
+              "type": "objective-id",
+              "target-id": "ia-5.1",
+              "status": {
+                "state": "not-satisfied"
+              }
+            },
+            "props": [
+              {
+                "name": "scuba-policy-id",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "MS.AAD.6.1v1"
+              },
+              {
+                "name": "bod-25-01-requirement",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "yes"
+              },
+              {
+                "name": "remediation-script",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Fix_PasswordNeverExpire.ps1"
+              },
+              {
+                "name": "remediation-status",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Generated"
+              },
+              {
+                "name": "nist-800-53-mapping",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "ia-5.1 (AI-suggested, analyst review required)"
+              }
+            ],
+            "related-observations": [
+              {
+                "observation-uuid": "8e123e30-5bd8-42a4-9a91-a2bdbbeb1e67"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

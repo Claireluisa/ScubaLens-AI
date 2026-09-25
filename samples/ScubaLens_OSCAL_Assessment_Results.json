@@ -1,0 +1,220 @@
+{
+  "assessment-results": {
+    "uuid": "0aa1225d-6c7b-4aa6-828d-409e79519173",
+    "metadata": {
+      "title": "ScubaLens AI - SCuBA Assessment Results",
+      "last-modified": "2026-09-25T23:31:03.582Z",
+      "version": "1.0",
+      "oscal-version": "1.1.2"
+    },
+    "import-ap": {
+      "href": "#scubalens-assessment-plan"
+    },
+    "results": [
+      {
+        "uuid": "8d5846ce-3272-432f-b8f3-ec1812d7fc61",
+        "title": "ScubaGear scan - Demo tenant · M365 GCC High",
+        "description": "Failed SCuBA controls with linked remediation scripts. Personal data masked before analysis.",
+        "start": "2026-09-25T23:31:03.582Z",
+        "reviewed-controls": {
+          "control-selections": [
+            {
+              "include-controls": [
+                {
+                  "control-id": "ia-2.1"
+                },
+                {
+                  "control-id": "ia-2.2"
+                },
+                {
+                  "control-id": "ia-2"
+                },
+                {
+                  "control-id": "ac-17"
+                },
+                {
+                  "control-id": "ac-3"
+                },
+                {
+                  "control-id": "ac-21"
+                }
+              ]
+            }
+          ]
+        },
+        "observations": [
+          {
+            "uuid": "43a5e945-d71d-4e00-b0a7-f818fc343983",
+            "title": "MS.AAD.3.2v1 - MFA Disabled in Entra ID",
+            "description": "ScubaGear reported FAIL for MS.AAD.3.2v1 (Entra ID): 0 conditional access policies enforce MFA for all users. Last policy change by [EMAIL_6F5D64E4]",
+            "methods": [
+              "TEST"
+            ],
+            "types": [
+              "finding"
+            ],
+            "collected": "2026-09-25T23:31:03.582Z"
+          },
+          {
+            "uuid": "c09e859b-6882-47c1-87dd-3d4ada7d9ebc",
+            "title": "MS.AAD.1.1v1 - Legacy Authentication Allowed",
+            "description": "ScubaGear reported FAIL for MS.AAD.1.1v1 (Entra ID): Legacy authentication not blocked. 14 sign-ins via IMAP from [IPV4_CC9AC13E] in the last 30 days",
+            "methods": [
+              "TEST"
+            ],
+            "types": [
+              "finding"
+            ],
+            "collected": "2026-09-25T23:31:03.582Z"
+          },
+          {
+            "uuid": "db4bfcbb-0f59-4088-af97-d9c3924280ad",
+            "title": "MS.SHAREPOINT.1.1v1 - Insecure SharePoint Sharing Enabled",
+            "description": "ScubaGear reported FAIL for MS.SHAREPOINT.1.1v1 (SharePoint Online): SharingCapability is ExternalUserAndGuestSharing. Site owner phone [PHONE_BC445A41]",
+            "methods": [
+              "TEST"
+            ],
+            "types": [
+              "finding"
+            ],
+            "collected": "2026-09-25T23:31:03.582Z"
+          }
+        ],
+        "findings": [
+          {
+            "uuid": "37d209b3-0554-4d1a-92ee-0303a1734a7a",
+            "title": "MFA Disabled in Entra ID",
+            "description": "Creates a Conditional Access policy that requires MFA for all users and apps, excluding break-glass accounts.",
+            "target": {
+              "type": "objective-id",
+              "target-id": "ia-2.1",
+              "status": {
+                "state": "not-satisfied"
+              }
+            },
+            "props": [
+              {
+                "name": "scuba-policy-id",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "MS.AAD.3.2v1"
+              },
+              {
+                "name": "bod-25-01-requirement",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "yes"
+              },
+              {
+                "name": "remediation-script",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Fix_EntraID_MFA.ps1"
+              },
+              {
+                "name": "remediation-status",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Generated"
+              },
+              {
+                "name": "nist-800-53-mapping",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "ia-2.1,ia-2.2 (AI-suggested, analyst review required)"
+              }
+            ],
+            "related-observations": [
+              {
+                "observation-uuid": "43a5e945-d71d-4e00-b0a7-f818fc343983"
+              }
+            ]
+          },
+          {
+            "uuid": "a9653cbd-501b-44cc-8b24-fe31a0b98a36",
+            "title": "Legacy Authentication Allowed",
+            "description": "Creates a Conditional Access policy that blocks Exchange ActiveSync and other legacy clients.",
+            "target": {
+              "type": "objective-id",
+              "target-id": "ia-2",
+              "status": {
+                "state": "not-satisfied"
+              }
+            },
+            "props": [
+              {
+                "name": "scuba-policy-id",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "MS.AAD.1.1v1"
+              },
+              {
+                "name": "bod-25-01-requirement",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "yes"
+              },
+              {
+                "name": "remediation-script",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Fix_LegacyAuth.ps1"
+              },
+              {
+                "name": "remediation-status",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Generated"
+              },
+              {
+                "name": "nist-800-53-mapping",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "ia-2,ac-17 (AI-suggested, analyst review required)"
+              }
+            ],
+            "related-observations": [
+              {
+                "observation-uuid": "c09e859b-6882-47c1-87dd-3d4ada7d9ebc"
+              }
+            ]
+          },
+          {
+            "uuid": "c20b5498-af46-44c0-9d12-37624b4524d3",
+            "title": "Insecure SharePoint Sharing Enabled",
+            "description": "Restricts external sharing to existing guests only, after saving the current setting for rollback.",
+            "target": {
+              "type": "objective-id",
+              "target-id": "ac-3",
+              "status": {
+                "state": "not-satisfied"
+              }
+            },
+            "props": [
+              {
+                "name": "scuba-policy-id",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "MS.SHAREPOINT.1.1v1"
+              },
+              {
+                "name": "bod-25-01-requirement",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "yes"
+              },
+              {
+                "name": "remediation-script",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Fix_SharePointSharing.ps1"
+              },
+              {
+                "name": "remediation-status",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "Generated"
+              },
+              {
+                "name": "nist-800-53-mapping",
+                "ns": "https://scubalens.ai/ns/oscal",
+                "value": "ac-3,ac-21 (AI-suggested, analyst review required)"
+              }
+            ],
+            "related-observations": [
+              {
+                "observation-uuid": "db4bfcbb-0f59-4088-af97-d9c3924280ad"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

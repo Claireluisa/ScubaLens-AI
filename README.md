@@ -1,7 +1,3 @@
-![ScubaLens AI](cover.png)
-
-**Live demo:** https://claireluisa.github.io/ScubaLens-AI/
-
 # ScubaLens AI
 
 **From SCuBA finding to verified fix.** Other tools document the risk. ScubaLens removes it.

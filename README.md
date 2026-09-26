@@ -1,3 +1,7 @@
+![ScubaLens AI](cover.png)
+
+**Live demo:** https://claireluisa.github.io/ScubaLens-AI/
+
 # ScubaLens AI
 
 **From SCuBA finding to verified fix.** Other tools document the risk. ScubaLens removes it.
@@ -11,7 +15,7 @@ ScubaLens AI is an active remediation platform for Microsoft 365 tenants in the 
 
 Built for the **Microsoft & CCI Innovation Challenge (Virginia), 2026**.
 
-> **Project status:** this repository is a front-end proof of concept. The dashboard, fix-script downloads, OSCAL export and PII masking all work. The Azure back end (Fabric, Foundry IQ, the Foundry agent) is designed but not yet deployed, and the chat replies are scripted for the demo. The remediation scripts use real Microsoft Graph and SharePoint Online cmdlets but have not been run against a production tenant.
+> **Project status:** working proof of concept. The dashboard runs on real CISA ScubaGear data; fix-script downloads, OSCAL export, PII masking and 42 automated tests all work, and a **live Microsoft Foundry model (gpt-4.1-mini)** explains masked findings with every line checked against the scan. Fabric IQ, Foundry IQ and the hosted back end are designed, not yet deployed. In the browser dashboard, Copilot replies are templated from scan data. The remediation scripts use real Microsoft Graph and SharePoint Online cmdlets but have not been run against a production tenant.
 
 ![Executive view](docs/executive-view.png)
 

@@ -40,6 +40,61 @@
 </style>
 </head>
 <body class="h-screen overflow-hidden text-slate-200 font-sans antialiased">
+
+<!-- ================= INTRO SPLASH ================= -->
+<div id="splash" role="dialog" aria-label="ScubaLens AI" title="Click to skip">
+  <div class="splash-glow"></div>
+  <div class="splash-inner">
+    <div class="splash-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.3-4.3"/><path d="M8.6 11.2l1.7 1.7 3.2-3.4"/></svg>
+    </div>
+    <div class="splash-title">ScubaLens <span>AI</span></div>
+    <div class="splash-tag">From SCuBA finding to verified fix</div>
+    <div class="splash-bar"><div></div></div>
+    <div class="splash-foot">CISA SCuBA · Microsoft 365 · Built on Microsoft Cloud</div>
+  </div>
+</div>
+<style>
+  #splash { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; cursor: pointer;
+            background: radial-gradient(900px 500px at 50% 40%, #1a1440 0%, #0a0e16 60%); transition: opacity .7s ease, transform .7s ease; }
+  #splash.hide { opacity: 0; transform: scale(1.04); pointer-events: none; }
+  .splash-glow { position: absolute; width: 520px; height: 520px; border-radius: 50%; filter: blur(90px); opacity: .35;
+                 background: conic-gradient(from 0deg, #0078d4, #7c3aed, #d946ef, #0078d4); animation: splashSpin 8s linear infinite; }
+  .splash-inner { position: relative; text-align: center; }
+  .splash-mark { width: 84px; height: 84px; margin: 0 auto; border-radius: 22px; display: flex; align-items: center; justify-content: center;
+                 background: linear-gradient(135deg, #0078d4 0%, #7c3aed 55%, #d946ef 100%); box-shadow: 0 20px 60px rgba(124,58,237,.45);
+                 animation: splashPop .7s cubic-bezier(.2,1.4,.4,1) both; }
+  .splash-mark svg { width: 48px; height: 48px; }
+  .splash-title { margin-top: 26px; font-size: 52px; font-weight: 700; letter-spacing: -.02em; color: #fff; animation: splashUp .7s .25s ease-out both; }
+  .splash-title span { background: linear-gradient(90deg, #a78bfa, #60a5fa); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .splash-tag { margin-top: 6px; font-size: 18px; color: #94a3b8; animation: splashUp .7s .45s ease-out both; }
+  .splash-bar { width: 220px; height: 3px; margin: 30px auto 0; border-radius: 3px; background: #1f2837; overflow: hidden; animation: splashUp .5s .6s ease-out both; }
+  .splash-bar div { height: 100%; width: 100%; background: linear-gradient(90deg, #0078d4, #7c3aed, #d946ef); transform-origin: left; animation: splashLoad 1.5s .6s ease-in-out both; }
+  .splash-foot { margin-top: 18px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #475569; animation: splashUp .7s .7s ease-out both; }
+  @keyframes splashPop { from { opacity: 0; transform: scale(.6) rotate(-8deg); } to { opacity: 1; transform: none; } }
+  @keyframes splashUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  @keyframes splashLoad { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes splashSpin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { #splash *, #splash { animation-duration: .01s !important; animation-delay: 0s !important; transition-duration: .2s !important; } }
+</style>
+<script>
+  window.__splashOpen = true;
+  (function () {
+    var el = document.getElementById('splash');
+    var done = false;
+    function close() {
+      if (done) return; done = true;
+      el.classList.add('hide');
+      window.__splashOpen = false;
+      window.dispatchEvent(new Event('splashdone'));
+      setTimeout(function () { el.remove(); }, 750);
+      window.removeEventListener('keydown', close);
+    }
+    el.addEventListener('click', close);
+    window.addEventListener('keydown', close);
+    setTimeout(close, 2300);
+  })();
+</script>
 <div class="flex h-full">
 
   <!-- ================= SIDEBAR ================= -->
@@ -551,7 +606,7 @@ function renderOverview() {
   document.getElementById('scanMeta').textContent = data.meta;
   document.getElementById('maskedTotal').textContent = maskedTotal;
   document.getElementById('listSub').textContent = 'BOD 25-01 requirements first, then by severity. Fixes deploy in Report-Only mode first.';
-  document.getElementById('scoreArc').style.strokeDashoffset = (314.16 * (1 - pct / 100)).toFixed(2);
+  setRing(pct);
 
   document.getElementById('overviewList').innerHTML = findings.map((f, i) => `
     <div class="px-6 py-4 flex items-center gap-4">
@@ -1001,12 +1056,21 @@ function renderAll() {
   select(state.selected);
 }
 
+/* Score ring: waits for the intro splash to finish so the animation is visible */
+let ringPct = 0;
+function setRing(p) {
+  ringPct = p;
+  if (window.__splashOpen) return;
+  document.getElementById('scoreArc').style.strokeDashoffset = (314.16 * (1 - p / 100)).toFixed(2);
+}
+window.addEventListener('splashdone', () => setTimeout(() => setRing(ringPct), 120));
+
 /* ================= Init ================= */
 renderPipeline();
 go('overview');
 setSourceButtons();
 document.getElementById('scoreArc').style.strokeDashoffset = '314.16';
-requestAnimationFrame(() => setTimeout(() => loadSource(SOURCES.demo), 150));
+loadSource(SOURCES.demo);
 document.getElementById('maskIn').value = sampleScan;
 document.getElementById('maskIn').addEventListener('input', updateMask);
 updateMask();

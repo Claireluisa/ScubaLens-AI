@@ -135,6 +135,20 @@ Test-Case "A different key produces different tokens" {
 Remove-Item -Path $tmp -Recurse -Force
 
 # ---------------------------------------------------------------
+Write-Host "`n5. Microsoft Foundry prompt contains no personal data" -ForegroundColor Cyan
+$foundry = & (Join-Path $scriptsDir 'Invoke-ScubaLensFoundry.ps1') -InputPath $sampleInput -DryRun -Quiet
+Test-Case "Dry run sends nothing" { -not $foundry.Sent }
+Test-Case "Prompt has no emails, IPs or GUIDs" {
+    -not ($foundry.Body -match '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}|\b(?:\d{1,3}\.){3}\d{1,3}\b|\b[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\b')
+}
+Test-Case "Prompt includes every failing SCuBA policy ID" {
+    ($foundry.Body -match 'MS\.AAD\.3\.2v1') -and ($foundry.Body -match 'MS\.AAD\.1\.1v1') -and ($foundry.Body -match 'MS\.SHAREPOINT\.1\.1v1')
+}
+Test-Case "Prompt forbids compliance claims and code" {
+    ($foundry.Body -match 'Never say the tenant or any listed control is compliant') -and ($foundry.Body -match 'Do not write code')
+}
+
+# ---------------------------------------------------------------
 $total = $script:passed + $script:failed
 Write-Host "`n$($script:passed) of $total tests passed." -ForegroundColor ($(if ($script:failed -eq 0) { 'Green' } else { 'Red' }))
 if ($script:failed -gt 0) { exit 1 } else { exit 0 }
